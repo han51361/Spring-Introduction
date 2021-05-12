@@ -10,7 +10,11 @@ import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {   //test에서도 같은 인스턴스를 사용하게 하기 위해
+        this.memberRepository = memberRepository;
+    }
 
     /* 회원가입 */
 
