@@ -1,5 +1,7 @@
 package springintro.hellospring.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import springintro.hellospring.domain.Member;
 import springintro.hellospring.repository.MemberRepository;
 import springintro.hellospring.repository.MemoryMemberRepository;
@@ -8,10 +10,12 @@ import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) {   //test에서도 같은 인스턴스를 사용하게 하기 위해
         this.memberRepository = memberRepository;
     }
